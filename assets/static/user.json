@@ -1,0 +1,11 @@
+{
+  "id": "u001",
+  "fullName": "Sumita Seth",
+  "email": "sumita.seth@gmail.com",
+  "avatarUrl": "https://example.com/avatar/john_doe.png",
+  "relation": "Cousin",
+  "contactInfo": "+91 98765 43210",
+  "aboutMe": "Please share any special requests, song, or dietary restrictions so we can make your day extra memorable.",
+  "occupation": "Software Engineer",
+  "hobbies": "Hiking, Coding, Photography"
+}
