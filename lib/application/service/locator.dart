@@ -14,8 +14,6 @@ abstract interface class Locator {
 }
 
 class LocatorImpl implements Locator {
-  static final LocatorImpl instance = LocatorImpl();
-
   /// The key is Type of the value(Object).
   ///
   /// Value[Object] is of dynamic type.
