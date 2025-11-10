@@ -5,6 +5,9 @@ import 'package:user_profile/infrastructure/repository_impl/user_repository_impl
 
 import '../../domain/repository/user_repository.dart';
 
+/// Global access to service locator.
+final LocatorImpl locator = LocatorImpl();
+
 abstract interface class AppInjector {
   Future<void> init();
 }
@@ -12,14 +15,14 @@ abstract interface class AppInjector {
 class DInjector implements AppInjector {
   @override
   Future<void> init() async {
-    LocatorImpl.instance.registerFactory<UserRemoteDataSource>(
+    locator.registerFactory<UserRemoteDataSource>(
       () => UserRemoteDataSourceImpl(),
     );
-    LocatorImpl.instance.registerFactory<UserRepository>(
-      () => UserRepositoryImpl(LocatorImpl.instance.get()),
+    locator.registerFactory<UserRepository>(
+      () => UserRepositoryImpl(locator.get()),
     );
-    LocatorImpl.instance.registerFactory(
-      () => UserProfileCubit(repository: LocatorImpl.instance.get()),
+    locator.registerFactory(
+      () => UserProfileCubit(repository: locator.get()),
     );
   }
 }
